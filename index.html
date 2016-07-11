@@ -115,7 +115,7 @@
   <title> Yanzx </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
 
@@ -172,7 +172,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -182,7 +182,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -235,6 +235,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/11/CSS居中/" itemprop="url">
+                  CSS居中
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-11T20:23:53+08:00" content="2016-07-11">
+              2016-07-11
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/11/CSS居中/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/11/CSS居中/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近一直在面试，也一直在碰壁，所以最近打算写一些前端面试的总结和必考的知识点，方便他人娱乐自己。</p>
+<h2 id="NO1-各种居中布局"><a href="#NO1-各种居中布局" class="headerlink" title="NO1.各种居中布局"></a>NO1.各种居中布局</h2><h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h4><p>1、text-align:center<br>父元素为块元素时子元素无论是块元素还是行元素都可以实现居中，当父元素为行元素时则失效，转换为inlin-block并设定宽度就可以了，低版本IE下貌似不好使。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">.con&#123;text-align: center;&#125;	</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;con&quot;&gt;</div><div class="line">	&lt;span&gt;文字居中&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>2、 margin:0 auto;<br>元素必须为display：block，而且必须有宽度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.con&#123;width：100%&#125;</div><div class="line">.con span &#123;margin:0 auto;display: block;width: 20%;border:1px solid red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;div class=&quot;con&quot;&gt;</div><div class="line">	&lt;span&gt;文字居中&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>3、position:absolute;left:50%;margin-left:-width/2(已知宽度);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">.con div&#123;position:absolute;left:50%;margin-left:-100px;width:200px;border:1px solid red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;con&quot;&gt;</div><div class="line">	&lt;div&gt;居中元素&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>4、相对浮动(宽度未知)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">.con&#123;position: relative;float: left;left:50%;border:1px solid red;&#125;</div><div class="line">.con div&#123;position: relative;float: left;right:50%;border:1px solid black;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;con&quot;&gt;</div><div class="line">	&lt;div&gt;居中元素&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>5、display:flex;justify-content:center;(css3弹性盒模型)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">.con&#123;display: flex;justify-content:center;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;con&quot;&gt;</div><div class="line">	&lt;div&gt;居中元素&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>6、display:table;text-align:center;方法可以实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">#box&#123;width:100%;height:100px; display:table;text-align:center;border: 1px solid red&#125;</div><div class="line">#box span&#123;width:100%;display:table-cell; vertical-align:middle;&#125;</div><div class="line">#inner&#123;display:inline-block;width:200px; border:1px solid #000;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div id=&quot;box&quot;&gt; </div><div class="line">     &lt;span&gt;&lt;div id=&quot;inner&quot;&gt;11111111111111111111&lt;/div&gt; &lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h4 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h4><p>1、position:absolute;top:50%;margin-top:-height/2;(已知高度)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">.con div&#123;position: absolute;top:50%;height:100px;margin-top:-50px;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;con&quot;&gt;</div><div class="line">	&lt;div&gt;居中元素&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>2、display:flex;items-align:center;父容器必须有高度(IE10以上支持，Safari支持－webkit-前缀的)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">.con &#123;display: flex;</div><div class="line">	 display:-webkit-flex;</div><div class="line">     -webkit-align-items: center;</div><div class="line">     height: 400px;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class=&quot;con&quot;&gt;</div><div class="line">	&lt;p&gt;居中元素&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>3、display:table-cell;vertical-align:middle;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">#box&#123;width:100%;height:100px; display:table;text-align:center;border: 1px solid red&#125;</div><div class="line">#box span&#123;width:100%;display:table-cell; vertical-align:middle;&#125;</div><div class="line">#inner&#123;display:inline-block;width:200px; border:1px solid #000;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div id=&quot;box&quot;&gt; </div><div class="line">     &lt;span&gt;&lt;div id=&quot;inner&quot;&gt;11111111111111111111&lt;/div&gt; &lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>4、单行内容居中line-height;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">.con &#123;height: 40px;line-height: 40px;border: 1px solid red&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;con&quot;&gt;</div><div class="line">	元素居中</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/05/YZX的博客/" itemprop="url">
                   YZX的博客
                 </a>
@@ -248,7 +368,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-07-05T11:17:49+08:00" content="2016-07-05">
               2016-07-05
             </time>
@@ -348,7 +468,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-07-05T00:46:02+08:00" content="2016-07-05">
               2016-07-05
             </time>
@@ -465,8 +585,8 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -542,7 +662,7 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -660,6 +780,6 @@
   
 
   
-
+  <a href="https://github.com/yanzxx"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
 </body>
 </html>
