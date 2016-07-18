@@ -285,59 +285,12 @@
 
       
         
-          
-            <p>前段时间很幸运在微博上获得了这本高逼格的“天书”，以前也看过几眼react的视频教程，自认为才疏学浅，无法完美装逼，如今偶然得此书，便决定平心静气好好学一下。</p>
-<h2 id="第一章-各种工具各种装"><a href="#第一章-各种工具各种装" class="headerlink" title="第一章  各种工具各种装"></a>第一章  各种工具各种装</h2><p><em>注：我用的是Mac所以一切以Mac OS系统为准</em></p>
-<h4 id="NO-1-➜-安装node和npm以及git"><a href="#NO-1-➜-安装node和npm以及git" class="headerlink" title="NO.1 ➜　安装node和npm以及git"></a>NO.1 ➜　安装node和npm以及git</h4><p>由于之前玩过node电脑里面有node和npm以及git，Mac里自带node环境不过React相关教程都建议把node版本升级到4.0以上。这一部分可以参照网上的安装教程有很多。</p>
-<h4 id="NO-2-➜从Twitter-Streaming-API中获取数据"><a href="#NO-2-➜从Twitter-Streaming-API中获取数据" class="headerlink" title="NO.2 ➜从Twitter Streaming API中获取数据"></a>NO.2 ➜从Twitter Streaming API中获取数据</h4><p>我们的React应用将从twitter中获取数据，twitter也为我们提供了streaming API，我们可以从公开的推文信息流中获得数据。不过要是用streaming API还要完成以下两步：<br>第1步：创建Twitter账号。<a href="https://twitter.com" target="_blank" rel="external">https://twitter.com</a></p>
-<p>第2步：创建twitter应用 <a href="https://apps.twitter.com，填写表单，点击create" target="_blank" rel="external">https://apps.twitter.com，填写表单，点击create</a> your twitter application创建应用。</p>
-<p>然后在 application settings区域找到两个必要数据Consumer key和Consumer Secret记录下这两个数据的值在之后的配置中要用到。</p>
-<p>完成上面这一步之后在同一个页面找到Your Access Token 区域点击Create My Access Token，然后回创建 Access Token和Access Token Secret同样将这两个信息保存之后会用到。</p>
-<h4 id="NO-3-➜Snapkite引擎过滤数据"><a href="#NO-3-➜Snapkite引擎过滤数据" class="headerlink" title="NO.3 ➜Snapkite引擎过滤数据"></a>NO.3 ➜Snapkite引擎过滤数据</h4><p>通过streaming API我们会获取大量的数据，为了获取对我们有用的数据我们必须过滤掉大部分没用的信息，由于twitter提供的过滤方法比较少，所以我们通过snapkite引擎来过滤数据。</p>
-<p>安装spnakite引擎，从Github上直接克隆到本地：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">git clone https://github.com/snapkite/spnakites-engines.git</div></pre></td></tr></table></figure>
-<p>然后要安装node－gyp模块，在安装这个模块之前要先安装python环境，建议版本为2.7，3.x不支持，于此同时还要有Xcode环境，且安装命令行，其命令为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcode-select --install</div></pre></td></tr></table></figure>
-<p>安装之后输入以下命令查看是否安装成功。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -v</div></pre></td></tr></table></figure>
-<p>然后通过命令行安装node－gyp</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g node-gyp</div></pre></td></tr></table></figure>
-<p>其中需要注意的是一定要加sudo否则会报错。安装成功会显示一个目录结构。</p>
-<p>然后进入到/snapkite-engine中安装其他依赖的包，命令为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
-<p>完成以后通过命令完成配置文件的复制</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp example.config.json config.json</div></pre></td></tr></table></figure>
-<p>复制完成后打开config.json文件，编辑配置项，其中trackKeywords为需要抓取的关键字，设置你想抓取的关键字即可。之后在twitter处将之前保存的4个key值填到对应位置上。</p>
-<p>接下来安装 snapkite filters,它是一个根据定义的规则来过滤信息的node.js的模块，他有许多种过滤器，这里我们安装四种。进入到filter目录下进行安装。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/snapkite/snapkite-filter-is-possibly-sensitive.git</div><div class="line">git clone https://github.com/snapkite/snapkite-filter-has-mobile-photo.git</div><div class="line">git clone https://github.com/snapkite/snapkite-filter-is-retweet.git</div><div class="line">git clone https://github.com/snapkite/snapkite-filter-has-text.git</div></pre></td></tr></table></figure>
-<p>当然也可以直接去Github上下载然后复制到filters下。</p>
-<p>安装完过滤器之后打开每一个文件夹将其下面的example.config.json（不是拷贝）一份并且重命名为config.json。</p>
-<p>然后返回到sanpkite目录下打开config.json将里面的filters对象配置为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;filters&quot;: [</div><div class="line">    &quot;snapkite-filter-is-possibly-sensitive&quot;,</div><div class="line">    &quot;snapkite-filter-has-mobile-photos&quot;,</div><div class="line">    &quot;snapkite-filter-is-retweet&quot;,</div><div class="line">    &quot;snapkite-filter-has-text&quot;</div><div class="line">    ]</div></pre></td></tr></table></figure>
-<p>之后在snapkite目录下运行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm start</div></pre></td></tr></table></figure>
-<p><em>一般情况下都会报错，原因是在package.json里有一个scripts对象，里面的star属性要设置为“npm start”才可以。</em></p>
-<h4 id="NO-4-➜创建目录结构"><a href="#NO-4-➜创建目录结构" class="headerlink" title="NO.4 ➜创建目录结构"></a>NO.4 ➜创建目录结构</h4><p>我们要在用户根目录下创建项目目录/snapterest，然后在下面创建source（存放javascript源文件）和build（存放编译后的javascript和html文件）子目录，并在source下创建components子目录。之后在source文件夹下创建app.js作为应用的切入口。</p>
-<h4 id="NO-5-➜创建package-json"><a href="#NO-5-➜创建package-json" class="headerlink" title="NO.5 ➜创建package.json"></a>NO.5 ➜创建package.json</h4><p>创建package.json是为了代码复用。它是npm的元数据文件，通过它里面的依赖数据我们可以随时使用npm install命令安装他们。创建package.json的方法是在项目目录下利用命令行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure></p>
-<p>这样我们的项目目录里就会有一个package.json</p>
-<h4 id="NO-6-➜复用node-js模块"><a href="#NO-6-➜复用node-js模块" class="headerlink" title="NO.6 ➜复用node.js模块"></a>NO.6 ➜复用node.js模块</h4><p>Browserify这个工具可以打包所有依赖文件，打包后的文件在客户端应用达到复用的目的。安装方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev browserify</div></pre></td></tr></table></figure>
-<p>其中 –save-dev命令是把将browserify添加到package.json中作为开发依赖。</p>
-<h4 id="NO-7-➜用gulp-js来构建应用"><a href="#NO-7-➜用gulp-js来构建应用" class="headerlink" title="NO.7 ➜用gulp.js来构建应用"></a>NO.7 ➜用gulp.js来构建应用</h4><p>gulp是前端自动化构建工具，安装方法为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp</div></pre></td></tr></table></figure>
-<p>安装完之后要在全局范围内再次安装gulp</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g gulp</div></pre></td></tr></table></figure>
-<p><em>同样要加sudo否则会报错。</em></p>
-<p>安装完之后输入命令gulp如果输出No gulpfile found则安装成功。<br>在项目目录下创建gulpfile.js文件并在里面创建一个任务通过browseify打包资源和依赖。代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var gulp=require(&quot;gulp&quot;);</div><div class="line">var browserify=require(&quot;browserify&quot;);</div><div class="line">var babelify=require(&quot;babelify&quot;);</div><div class="line">var source=require(&quot;vinyl-source-stream&quot;);</div><div class="line">gulp.task(&apos;default&apos;,function()&#123;</div><div class="line">	return browserify(&apos;./source/app.js&apos;)</div><div class="line">	.transform(babelify)</div><div class="line">	.bundle()</div><div class="line">	.pipe(source(&apos;snapterest.js&apos;))</div><div class="line">	.pipe(gulp.dest(&apos;./bulid/&apos;));</div><div class="line">	</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>由于我们缺少babelify模块和vinyl-source-stream模块所以以上代码会报错，我们需要安装babelify:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev babelify</div></pre></td></tr></table></figure>
-<p>之所以要安装vinyl-source-stream模块是为了同时使用gulp和browserify<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev vinyl-source-stream</div></pre></td></tr></table></figure></p>
-<p>然后执行gulp命令，然后你会发现在build目录下会自动生成snapterest.js</p>
-<h4 id="NO-8-➜创建一个页面"><a href="#NO-8-➜创建一个页面" class="headerlink" title="NO.8 ➜创建一个页面"></a>NO.8 ➜创建一个页面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;reacr-appliaction&quot;&gt;</div><div class="line">	I am about to learn the essentials of React.js</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;./snapterest.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>在浏览器中打开便可以看到：I am about to learn the essentials of React.js了。准备工作基本完成。</p>
-
-          
+          <p>前段时间很幸运在微博上获得了这本高逼格的“天书”，以前也看过几眼react的视频教程，自认为才疏学浅，无法完美装逼，如今偶然得此书，便决定平心静气好好学一下。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/18/React精髓学习笔记/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
