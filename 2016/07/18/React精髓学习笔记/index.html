@@ -84,12 +84,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yanzx">
-<meta property="og:url" content="http://yanzxx@github.io/index.html">
+<meta name="description" content="前段时间很幸运在微博上获得了这本高逼格的“天书”，以前也看过几眼react的视频教程，自认为才疏学浅，无法完美装逼，如今偶然得此书，便决定平心静气好好学一下。
+第一章  各种工具各种装注：我用的是Mac所以一切以Mac OS系统为准
+NO.1 ➜　安装node和npm以及git由于之前玩过node电脑里面有node和npm以及git，Mac里自带node环境不过React相关教程都建议把node版">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React 精髓学习笔记">
+<meta property="og:url" content="http://yanzxx@github.io/2016/07/18/React精髓学习笔记/index.html">
 <meta property="og:site_name" content="Yanzx">
+<meta property="og:description" content="前段时间很幸运在微博上获得了这本高逼格的“天书”，以前也看过几眼react的视频教程，自认为才疏学浅，无法完美装逼，如今偶然得此书，便决定平心静气好好学一下。
+第一章  各种工具各种装注：我用的是Mac所以一切以Mac OS系统为准
+NO.1 ➜　安装node和npm以及git由于之前玩过node电脑里面有node和npm以及git，Mac里自带node环境不过React相关教程都建议把node版">
+<meta property="og:updated_time" content="2016-07-18T15:48:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yanzx">
+<meta name="twitter:title" content="React 精髓学习笔记">
+<meta name="twitter:description" content="前段时间很幸运在微博上获得了这本高逼格的“天书”，以前也看过几眼react的视频教程，自认为才疏学浅，无法完美装逼，如今偶然得此书，便决定平心静气好好学一下。
+第一章  各种工具各种装注：我用的是Mac所以一切以Mac OS系统为准
+NO.1 ➜　安装node和npm以及git由于之前玩过node电脑里面有node和npm以及git，Mac里自带node环境不过React相关教程都建议把node版">
 
 
 
@@ -110,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://yanzxx@github.io/"/>
+  <link rel="canonical" href="http://yanzxx@github.io/2016/07/18/React精髓学习笔记/"/>
 
-  <title> Yanzx </title>
+  <title> React 精髓学习笔记 | Yanzx </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -133,9 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -212,9 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -234,10 +242,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/07/18/React精髓学习笔记/" itemprop="url">
-                  React 精髓学习笔记
-                </a>
+                React 精髓学习笔记
               
             
           </h1>
@@ -273,6 +278,11 @@
           
 
           
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
         </div>
       </header>
     
@@ -284,9 +294,7 @@
       
 
       
-        
-          
-            <p>前段时间很幸运在微博上获得了这本高逼格的“天书”，以前也看过几眼react的视频教程，自认为才疏学浅，无法完美装逼，如今偶然得此书，便决定平心静气好好学一下。</p>
+        <p>前段时间很幸运在微博上获得了这本高逼格的“天书”，以前也看过几眼react的视频教程，自认为才疏学浅，无法完美装逼，如今偶然得此书，便决定平心静气好好学一下。</p>
 <h2 id="第一章-各种工具各种装"><a href="#第一章-各种工具各种装" class="headerlink" title="第一章  各种工具各种装"></a>第一章  各种工具各种装</h2><p><em>注：我用的是Mac所以一切以Mac OS系统为准</em></p>
 <h4 id="NO-1-➜-安装node和npm以及git"><a href="#NO-1-➜-安装node和npm以及git" class="headerlink" title="NO.1 ➜　安装node和npm以及git"></a>NO.1 ➜　安装node和npm以及git</h4><p>由于之前玩过node电脑里面有node和npm以及git，Mac里自带node环境不过React相关教程都建议把node版本升级到4.0以上。这一部分可以参照网上的安装教程有很多。</p>
 <h4 id="NO-2-➜从Twitter-Streaming-API中获取数据"><a href="#NO-2-➜从Twitter-Streaming-API中获取数据" class="headerlink" title="NO.2 ➜从Twitter Streaming API中获取数据"></a>NO.2 ➜从Twitter Streaming API中获取数据</h4><p>我们的React应用将从twitter中获取数据，twitter也为我们提供了streaming API，我们可以从公开的推文信息流中获得数据。不过要是用streaming API还要完成以下两步：<br>第1步：创建Twitter账号。<a href="https://twitter.com" target="_blank" rel="external">https://twitter.com</a></p>
@@ -337,222 +345,40 @@
 <h4 id="NO-8-➜创建一个页面"><a href="#NO-8-➜创建一个页面" class="headerlink" title="NO.8 ➜创建一个页面"></a>NO.8 ➜创建一个页面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;reacr-appliaction&quot;&gt;</div><div class="line">	I am about to learn the essentials of React.js</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;./snapterest.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <p>在浏览器中打开便可以看到：I am about to learn the essentials of React.js了。准备工作基本完成。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/13/高度宽度自适应/" itemprop="url">
-                  自适应布局解决方案
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-13T13:10:55+08:00" content="2016-07-13">
-              2016-07-13
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/13/高度宽度自适应/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/13/高度宽度自适应/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="../../images/wechat.png" alt="Yanzx WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
       
       
-
-      
-        
-          <p>这一次来说说传说中的自适应布局吧，如今我们写的页面大多是要兼容多种移动设备的，自适应布局便可以巧妙地解决这个问题。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/13/高度宽度自适应/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/11/CSS居中/" itemprop="url">
-                  CSS居中
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-11T20:23:53+08:00" content="2016-07-11">
-              2016-07-11
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/11/CSS居中/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/11/CSS居中/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="../../images/zfb.jpg" alt="Yanzx Alipay"/>
+          <p>支付宝打赏</p>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近一直在面试，所以最近打算写一些前端面试的总结和必考的知识点，方便他人娱乐自己。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/11/CSS居中/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
       
     </div>
+  </div>
 
-    <div>
-      
-    </div>
 
-    <div>
       
     </div>
 
@@ -560,122 +386,51 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/13/高度宽度自适应/" rel="next" title="自适应布局解决方案">
+                <i class="fa fa-chevron-left"></i> 自适应布局解决方案
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/07/05/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-05T00:46:02+08:00" content="2016-07-05">
-              2016-07-05
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/05/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/05/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/05/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/18/React精髓学习笔记/"
+     data-title="React 精髓学习笔记"
+     data-content=""
+     data-url="http://yanzxx@github.io/2016/07/18/React精髓学习笔记/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -683,6 +438,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/18/React精髓学习笔记/"
+           data-title="React 精髓学习笔记" data-url="http://yanzxx@github.io/2016/07/18/React精髓学习笔记/">
+      </div>
+    
+  </div>
+
 
 
         </div>
@@ -703,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -769,6 +541,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-各种工具各种装"><span class="nav-number">1.</span> <span class="nav-text">第一章  各种工具各种装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NO-1-➜-安装node和npm以及git"><span class="nav-number">1.0.1.</span> <span class="nav-text">NO.1 ➜　安装node和npm以及git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NO-2-➜从Twitter-Streaming-API中获取数据"><span class="nav-number">1.0.2.</span> <span class="nav-text">NO.2 ➜从Twitter Streaming API中获取数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NO-3-➜Snapkite引擎过滤数据"><span class="nav-number">1.0.3.</span> <span class="nav-text">NO.3 ➜Snapkite引擎过滤数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NO-4-➜创建目录结构"><span class="nav-number">1.0.4.</span> <span class="nav-text">NO.4 ➜创建目录结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NO-5-➜创建package-json"><span class="nav-number">1.0.5.</span> <span class="nav-text">NO.5 ➜创建package.json</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NO-6-➜复用node-js模块"><span class="nav-number">1.0.6.</span> <span class="nav-text">NO.6 ➜复用node.js模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NO-7-➜用gulp-js来构建应用"><span class="nav-number">1.0.7.</span> <span class="nav-text">NO.7 ➜用gulp.js来构建应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NO-8-➜创建一个页面"><span class="nav-number">1.0.8.</span> <span class="nav-text">NO.8 ➜创建一个页面</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -881,6 +664,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
