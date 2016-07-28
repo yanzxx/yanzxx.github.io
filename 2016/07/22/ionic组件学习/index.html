@@ -1,0 +1,720 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="基于32位的ionic学习笔记作为一个受瞩目的跨平台开发App开发框架，ionic是一个专注于用WEB开发技术，基于HTML5创建类似于手机平台原生应用的一个开发框架。绑定了AngularJS和Sass。这个框架的目的是从web的角度开发手机应用，基于PhoneGap的编译平台，可以实现编译成各个平台的应用程序。发现网上关于32位的学习资料还是挺少的，而且其相对于之前版本还是有一定差异的，其与an">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yanzx">
+<meta property="og:url" content="http://yanzxx@github.io/2016/07/22/ionic组件学习/index.html">
+<meta property="og:site_name" content="Yanzx">
+<meta property="og:description" content="基于32位的ionic学习笔记作为一个受瞩目的跨平台开发App开发框架，ionic是一个专注于用WEB开发技术，基于HTML5创建类似于手机平台原生应用的一个开发框架。绑定了AngularJS和Sass。这个框架的目的是从web的角度开发手机应用，基于PhoneGap的编译平台，可以实现编译成各个平台的应用程序。发现网上关于32位的学习资料还是挺少的，而且其相对于之前版本还是有一定差异的，其与an">
+<meta property="og:image" content="https://github.com/yanzxx/IndividualEvent/blob/master/mypics/card.png?raw=true">
+<meta property="og:updated_time" content="2016-07-28T13:45:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Yanzx">
+<meta name="twitter:description" content="基于32位的ionic学习笔记作为一个受瞩目的跨平台开发App开发框架，ionic是一个专注于用WEB开发技术，基于HTML5创建类似于手机平台原生应用的一个开发框架。绑定了AngularJS和Sass。这个框架的目的是从web的角度开发手机应用，基于PhoneGap的编译平台，可以实现编译成各个平台的应用程序。发现网上关于32位的学习资料还是挺少的，而且其相对于之前版本还是有一定差异的，其与an">
+<meta name="twitter:image" content="https://github.com/yanzxx/IndividualEvent/blob/master/mypics/card.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6304456451096053000,
+      author: 'yanzhengxing'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yanzxx@github.io/2016/07/22/ionic组件学习/"/>
+
+  <title>  | Yanzx </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Yanzx</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-22T15:32:49+08:00" content="2016-07-22">
+              2016-07-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/22/ionic组件学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/22/ionic组件学习/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="基于32位的ionic学习笔记"><a href="#基于32位的ionic学习笔记" class="headerlink" title="基于32位的ionic学习笔记"></a>基于32位的ionic学习笔记</h1><p>作为一个受瞩目的跨平台开发App开发框架，ionic是一个专注于用WEB开发技术，基于HTML5创建类似于手机平台原生应用的一个开发框架。绑定了AngularJS和Sass。这个框架的目的是从web的角度开发手机应用，基于PhoneGap的编译平台，可以实现编译成各个平台的应用程序。<br>发现网上关于32位的学习资料还是挺少的，而且其相对于之前版本还是有一定差异的，其与angular2一起用。这里的内容均基于32版本的。<a id="more"></a></p>
+<h3 id="一、生命周期"><a href="#一、生命周期" class="headerlink" title="一、生命周期"></a>一、生命周期</h3><p>当页面加载完</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPageLoaded()&#123;</div><div class="line">  console.log(&quot;page 1 page loaded&quot;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>当页面即将进入的时候</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPageWillEnter()&#123;</div><div class="line">  console.log(&quot;page 1 will enter&quot;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>当页面已经进入的时候</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPageDidEnter()&#123;</div><div class="line">  console.log(&quot;page 1 did enter&quot;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>当页面即将离开的时候</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPageWillLeave()&#123;</div><div class="line">  console.log(&quot;page 1 will leave&quot;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>当页面已经离开的时候</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPageDidLeave()&#123;</div><div class="line">  console.log(&quot;page 1 did leave&quot;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>从DOM中移除的时候执行生命周期  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPageWillUnload()&#123;</div><div class="line">  </div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>从DOM中移除完成时执行的生命周期  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPageDidUnload()&#123;</div><div class="line">  	</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h2 id="二、下面我们来说一些常用的组件，需要注意的是在我们使用这些组件之前需要将其引入到页面里。"><a href="#二、下面我们来说一些常用的组件，需要注意的是在我们使用这些组件之前需要将其引入到页面里。" class="headerlink" title="二、下面我们来说一些常用的组件，需要注意的是在我们使用这些组件之前需要将其引入到页面里。"></a>二、<em>下面我们来说一些常用的组件，需要注意的是在我们使用这些组件之前需要将其引入到页面里。</em></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import &#123;Page,NavController,Loading,Alert,Toast,Modal,ViewController&#125; from &apos;ionic-angular&apos;;</div></pre></td></tr></table></figure>
+<h2 id="Tab控件"><a href="#Tab控件" class="headerlink" title="Tab控件"></a>Tab控件</h2><h4 id="图标的使用"><a href="#图标的使用" class="headerlink" title="图标的使用"></a>图标的使用</h4><p>图标地址：<a href="http://ionicframework.com/docs/v2/ionicons/" target="_blank" rel="external">http://ionicframework.com/docs/v2/ionicons/</a><br>使用方法直接复制，粘贴到tab控件的tabIcon上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;ion-tab [root]=&quot;tab1Root&quot; tabTitle=&quot;Home&quot; **tabIcon=&quot;appstore&quot;**&gt;&lt;/ion-tab&gt;</div></pre></td></tr></table></figure>
+<h4 id="消息提醒小图标及其样式设置："><a href="#消息提醒小图标及其样式设置：" class="headerlink" title="消息提醒小图标及其样式设置："></a>消息提醒小图标及其样式设置：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;ion-tab [root]=&quot;tab1Root&quot; tabTitle=&quot;Home&quot; tabIcon=&quot;appstore&quot; **tabBadge=&quot;3&quot;  tabBadgeStyle=&quot;danger&quot;**&gt;&lt;/ion-tab&gt;</div></pre></td></tr></table></figure>
+<p>这里面的颜色设置采用变量的方法，颜色变量定义在themes文件夹下的app.variables.scss里面。可以自行定义需要的颜色。直接写颜色是不好使的！！！</p>
+<h4 id="设置默认加载的Tab"><a href="#设置默认加载的Tab" class="headerlink" title="设置默认加载的Tab."></a>设置默认加载的Tab.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ion-tabs ＃mainTabs **selectedIndex=&quot;2&quot;**&gt;</div><div class="line">  &lt;ion-tab [root]=&quot;tab1Root&quot; tabTitle=&quot;Home&quot; tabIcon=&quot;appstore&quot;&gt;&lt;/ion-tab&gt;</div><div class="line">  &lt;ion-tab [root]=&quot;tab2Root&quot; tabTitle=&quot;About&quot; tabIcon=&quot;information-circle&quot; tabBadge=&quot;3&quot; tabBadgeStyle=&quot;danger&quot;&gt;&lt;/ion-tab&gt;</div><div class="line">  &lt;ion-tab [root]=&quot;tab3Root&quot; tabTitle=&quot;Contact&quot; tabIcon=&quot;contacts&quot;&gt;&lt;/ion-tab&gt;</div><div class="line">&lt;/ion-tabs&gt;</div></pre></td></tr></table></figure>
+<h4 id="动态加载tab"><a href="#动态加载tab" class="headerlink" title="动态加载tab"></a>动态加载tab</h4><p>应用场景：如果用户未登录则家在登录tab，如果已经登陆则选择加载数据的Tab给用户看。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> onPageDidEnter()&#123;</div><div class="line">    //在进入之后我们动态的选定某一个Tab</div><div class="line">    let tabs=this.app.getComponent(&quot;mainTabs&quot;);//获取tab控件</div><div class="line">    tabs.select(2);//选择控件索引值</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然在此之前要构造app，并将app作为参数传入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">export class TabsPage &#123;</div><div class="line">  @ViewChild(&apos;mainTabs&apos;) tabRef: Tabs;</div><div class="line">  private tab1Root: any;</div><div class="line">  private tab2Root: any;</div><div class="line">  private tab3Root: any;</div><div class="line"></div><div class="line">  constructor() &#123;</div><div class="line">    // this tells the tabs component which Pages</div><div class="line">    // should be each tab&apos;s root Page</div><div class="line">    this.tab1Root = HomePage;</div><div class="line">    this.tab2Root = AboutPage;</div><div class="line">    this.tab3Root = ContactPage;</div><div class="line">  &#125;</div><div class="line">    </div><div class="line">  ionViewDidEnter()&#123;</div><div class="line">  this.tabRef.select(2);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="button组件"><a href="#button组件" class="headerlink" title="button组件"></a>button组件</h2><p>按钮颜色只需将颜色变量写在标签内就可以了，按钮样式同样将样式值直接写在标签上就可以了。其中outline样式为线框样式，clear样式为只有文字的按钮样式,round为带圆角的按钮样式。<br>按钮长度一般情况下为自适应，可以自行设置，其中block为占满一行，small为小尺寸的，large为大尺寸的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;button gray&gt;button&lt;/button&gt;</div><div class="line">&lt;button outline danger&gt;outline button&lt;/button&gt;</div><div class="line">&lt;button clear danger&gt;clear button&lt;/button&gt;</div><div class="line">&lt;button round danger&gt;round button&lt;/button&gt;</div><div class="line">&lt;button block danger&gt;block button&lt;/button&gt;</div><div class="line">&lt;button small danger&gt;small button&lt;/button&gt;</div><div class="line">&lt;button large danger&gt;large button&lt;/button&gt;</div></pre></td></tr></table></figure></p>
+<p>带图标的按钮只许加入如下标签即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;button&gt;</div><div class="line">  &lt;ion-icon name=&quot;home&quot;&gt;&lt;/ion-icon&gt;</div><div class="line">  主页</div><div class="line">&lt;/button&gt;</div></pre></td></tr></table></figure>
+<h2 id="input控件"><a href="#input控件" class="headerlink" title="input控件"></a>input控件</h2><p>这里来说几种常用的input的样式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;ion-content padding&gt;//padding 内留白</div><div class="line">  &lt;ion-list&gt;</div><div class="line">  &lt;ion-item&gt;</div><div class="line">  //input中可以用placeholder来显示提示信息</div><div class="line">  &lt;ion-input type=&quot;text&quot; placeholder=&quot;用户名&quot;&gt;&lt;/ion-input&gt;</div><div class="line">  &lt;/ion-item&gt;</div><div class="line"></div><div class="line">   &lt;ion-item&gt;</div><div class="line">   //也可以用label形式显示</div><div class="line">  &lt;ion-label&gt;密&amp;nbsp;&amp;nbsp;码&lt;/ion-label&gt;</div><div class="line">  &lt;ion-input type=&quot;password&quot; &gt;&lt;/ion-input&gt;</div><div class="line">  &lt;/ion-item&gt;</div><div class="line"></div><div class="line">  &lt;ion-item&gt;</div><div class="line">  //floating形式显示则为输入时提示信息字体缩小上浮。</div><div class="line">  &lt;ion-label floating&gt;验证信息&lt;/ion-label&gt;</div><div class="line">  &lt;ion-input type=&quot;text&quot; &gt;&lt;/ion-input&gt;</div><div class="line">  &lt;/ion-item&gt;</div><div class="line"></div><div class="line">   &lt;ion-item&gt;</div><div class="line">   //stacked形式为提示信息始终上浮状态</div><div class="line">  &lt;ion-label stacked&gt;兴趣&lt;/ion-label&gt;</div><div class="line">  &lt;ion-input type=&quot;text&quot; &gt;&lt;/ion-input&gt;</div><div class="line">  &lt;/ion-item&gt;</div><div class="line">  &lt;/ion-list&gt;</div><div class="line">  &lt;button block&gt;登录&lt;/button&gt;</div><div class="line">&lt;/ion-content&gt;</div></pre></td></tr></table></figure></p>
+<p>说完样式，再来说一下angular2.js绑定数据和添加事件，以点击事件为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//绑定数据</div><div class="line">&lt;ion-item&gt;</div><div class="line">    &lt;ion-label&gt;用户名&lt;/ion-label&gt;</div><div class="line">    &lt;ion-input type=&quot;text&quot; [(ngModel)]=&apos;user.username&apos;&gt;&lt;/ion-input&gt;</div><div class="line">&lt;/ion-item&gt;</div><div class="line">//添加事件</div><div class="line">&lt;button block (click)=&quot;showInfro()&quot;&gt;登录&lt;/button&gt;</div></pre></td></tr></table></figure>
+<p>这里需要注意的是32版本中的ionic中this初始化方式有改变：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public user = &#123;</div><div class="line">		username:&apos;&apos;,</div><div class="line">		password:&apos;&apos;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h2 id="loading组件"><a href="#loading组件" class="headerlink" title="loading组件"></a>loading组件</h2><p>注意初始化，3秒后使其消失</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">let loading=Loading.create(&#123;</div><div class="line">        content:&quot;正在登录...&quot;,</div><div class="line">        duration:3000</div><div class="line">      &#125;);</div><div class="line">      this.nav.present(loading);</div><div class="line">      setTimeout(()=&gt;&#123;</div><div class="line">        loading.dismiss();</div><div class="line">      &#125;,3000);</div></pre></td></tr></table></figure>
+<h2 id="Alert组件"><a href="#Alert组件" class="headerlink" title="Alert组件"></a>Alert组件</h2><p>用法和loading组件相似</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">let alertUserNameError=Alert.create(&#123;</div><div class="line">          title:&quot;inoicpro&quot;,</div><div class="line">          subTitle:&quot;用户名输入有误&quot;,</div><div class="line">          buttons:[&apos;Dismiss&apos;]</div><div class="line"></div><div class="line">        &#125;);</div><div class="line">        this.nav.present(alertUserNameError);</div></pre></td></tr></table></figure>
+<h2 id="Toast组件（用于输入校验的错误提醒）"><a href="#Toast组件（用于输入校验的错误提醒）" class="headerlink" title="Toast组件（用于输入校验的错误提醒）"></a>Toast组件（用于输入校验的错误提醒）</h2><p>基本用法和loading一样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let toast=Toast.create(&#123;</div><div class="line">          message:&apos;用户名输入有误&apos;,</div><div class="line">          duration:2000,</div><div class="line">          position:&apos;top&apos;</div><div class="line">          </div><div class="line">        &#125;);</div><div class="line">        toast.onDismiss(()=&gt;&#123;</div><div class="line">          console.log(&quot;Dismissed toast&quot;);</div><div class="line">        &#125;);</div><div class="line">        this.nav.present(toast);</div></pre></td></tr></table></figure></p>
+<h2 id="Grid布局"><a href="#Grid布局" class="headerlink" title="Grid布局"></a>Grid布局</h2><p>基本写法如下,在uon-row中通过center 或baseline来控制它里面内容的垂直对齐方式。在ion-col标签中用width-10来控制宽度，表示占10%的宽度，offset-25表示偏移。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ion-grid&gt;</div><div class="line">  &lt;ion-row center&gt;</div><div class="line">    &lt;ion-col width-10 offset-25&gt;This column will take 10% of space&lt;/ion-col&gt;</div><div class="line">  &lt;/ion-row&gt;</div><div class="line">&lt;/ion-grid&gt;</div></pre></td></tr></table></figure>
+<h2 id="Modal组件"><a href="#Modal组件" class="headerlink" title="Modal组件"></a>Modal组件</h2><p>可以通过modal组件跳转页面，modal层为新页面。<br>通过点击按钮触发register事件从而建立modal。</p>
+<p>首先我们需要创建新的页面register.html以及register.ts文件</p>
+<p>我们以import方式将新的modal页面引入</p>
+<p>然后在ragister.ts文件里进行对modaly新页面的一些操作。</p>
+<p>原页面.ts文件里需要添加的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import &#123;Register &#125; from &apos;../contact/register&apos;;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">register()&#123;</div><div class="line">      var modal=Modal.create(Register);</div><div class="line">      this.nav.present(modal);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>新html页面里的代码如下，</p>
+<p>＊start为此标签现实的位置，在开头，end表示在结尾。但在安卓平台下，若为start则位置在右侧，iOS与之相反在左侧。</p>
+<p>＊showWhen属性代表在哪个平台下显示次块内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;ion-header&gt;</div><div class="line">  &lt;ion-navbar primary&gt;</div><div class="line">    &lt;ion-title&gt;</div><div class="line">      用户中心</div><div class="line">    &lt;/ion-title&gt;</div><div class="line">    &lt;ion-buttons start&gt;</div><div class="line">    &lt;button (click)=dismiss() &gt;</div><div class="line">      &lt;span showWhen=&quot;ios&quot;&gt;取消&lt;/span&gt;</div><div class="line">      &lt;ion-icon name=&quot;md-close&quot; showWhen=&quot;android,windows&quot;&gt;&lt;/ion-icon&gt;</div><div class="line">    &lt;/button&gt;</div><div class="line">    &lt;/ion-buttons&gt;</div><div class="line">  &lt;/ion-navbar&gt;</div><div class="line">&lt;/ion-header&gt;</div><div class="line"></div><div class="line">&lt;ion-content padding&gt;</div><div class="line">  </div><div class="line">&lt;/ion-content&gt;</div></pre></td></tr></table></figure>
+<p><em>需要注意的是内容要包裹在ion-content标签内，否则页面是透明的，与原页面同时出现。</em></p>
+<p>新的.ts文件代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">import &#123;Component&#125; from &apos;@angular/core&apos;;</div><div class="line">import &#123;Page,NavController,Loading,Alert,Toast,Modal,ViewController&#125; from &apos;ionic-angular&apos;;</div><div class="line"></div><div class="line">@Component(&#123;</div><div class="line">  templateUrl: &apos;build/pages/contact/register.html&apos;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line">export class Register &#123;</div><div class="line">	constructor(public viewCtrl: ViewController) &#123;&#125;</div><div class="line"></div><div class="line">	 dismiss()&#123;</div><div class="line">	 	this.viewCtrl.dismiss();</div><div class="line">	 	//alert(&quot;y&quot;);</div><div class="line">	 &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里需要注意的是export引入的class与前面import引入的名字要保持一致！均为Register。</p>
+<h2 id="Toolbar组件"><a href="#Toolbar组件" class="headerlink" title="Toolbar组件"></a>Toolbar组件</h2><p>该组件是位于页面顶部的标题部分，可以设置它的颜色。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;ion-toolbar primary&gt;</div><div class="line">  &lt;ion-title&gt;Toolbar&lt;/ion-title&gt;</div><div class="line">&lt;/ion-toolbar&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="card组件"><a href="#card组件" class="headerlink" title="card组件"></a>card组件</h2><p>利用card我们可以写出类似微博那样的布局。下面代码为比较完整的一个布局结构。<br>ion-avatar标签来存放头像，并给其item-left属性这样就可以左浮动。<br>在评论和点赞的按钮出需要注意的是一定要清一下浮动，设置clear属性。否则按钮会紧挨在一起。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;ion-card&gt;</div><div class="line">    &lt;ion-item&gt;</div><div class="line">      &lt;ion-avatar item-left&gt;</div><div class="line">      &lt;img src=&quot;../img/1.png&quot; style=&quot;width:40px;height:40px;border-radius:50%&quot; &gt;</div><div class="line">      &lt;/ion-avatar&gt;</div><div class="line">       &lt;h2&gt;哈哈哈哈&lt;/h2&gt;</div><div class="line">       &lt;p&gt;来自新浪微博&lt;/p&gt;</div><div class="line">       &lt;p&gt;我又发布了一辆新车，上天入地&lt;/p&gt;</div><div class="line">    &lt;/ion-item&gt;</div><div class="line">    &lt;img src=&quot;../img/2.png&quot; /&gt;</div><div class="line">    &lt;ion-card-content&gt;</div><div class="line">      &lt;p&gt;我在此发布了一条微博&lt;/p&gt;</div><div class="line">    &lt;/ion-card-content&gt;</div><div class="line">    &lt;ion-item href=&quot;#&quot;&gt;</div><div class="line">     &lt;button primary clear &gt;</div><div class="line">       &lt;ion-icon name=&quot;thumbs-up&quot; &gt;&lt;/ion-icon&gt;</div><div class="line">       &lt;div&gt;1111赞&lt;/div&gt;</div><div class="line">       &lt;ion-icon name=&quot;text&quot;&gt;&lt;/ion-icon&gt;</div><div class="line">       &lt;div&gt;600&lt;/div&gt;</div><div class="line">     &lt;/button&gt;</div><div class="line">     &lt;ion-note item-right&gt;一小时前&lt;/ion-note&gt;</div><div class="line">    &lt;/ion-item&gt;</div><div class="line">  &lt;/ion-card&gt;</div></pre></td></tr></table></figure></p>
+<p>最后效果为：<br><img src="https://github.com/yanzxx/IndividualEvent/blob/master/mypics/card.png?raw=true" alt="image description"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="../../images/wechat.png" alt="Yanzx WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="../../images/zfb.jpg" alt="Yanzx Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/20/webApp学习笔记/" rel="next" title="webApp学习笔记之环境搭建">
+                <i class="fa fa-chevron-left"></i> webApp学习笔记之环境搭建
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/22/ionic组件学习/"
+     data-title=""
+     data-content=""
+     data-url="http://yanzxx@github.io/2016/07/22/ionic组件学习/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/22/ionic组件学习/"
+           data-title="" data-url="http://yanzxx@github.io/2016/07/22/ionic组件学习/">
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Yanzx" />
+          <p class="site-author-name" itemprop="name">Yanzx</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yanzxx" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3279012654" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/yanzhengxing" target="_blank" title="领英">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  领英
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基于32位的ionic学习笔记"><span class="nav-number">1.</span> <span class="nav-text">基于32位的ionic学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、生命周期"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、下面我们来说一些常用的组件，需要注意的是在我们使用这些组件之前需要将其引入到页面里。"><span class="nav-number">1.1.</span> <span class="nav-text">二、下面我们来说一些常用的组件，需要注意的是在我们使用这些组件之前需要将其引入到页面里。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tab控件"><span class="nav-number">1.2.</span> <span class="nav-text">Tab控件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图标的使用"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">图标的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#消息提醒小图标及其样式设置："><span class="nav-number">1.2.0.2.</span> <span class="nav-text">消息提醒小图标及其样式设置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置默认加载的Tab"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">设置默认加载的Tab.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态加载tab"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">动态加载tab</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#button组件"><span class="nav-number">1.3.</span> <span class="nav-text">button组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input控件"><span class="nav-number">1.4.</span> <span class="nav-text">input控件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loading组件"><span class="nav-number">1.5.</span> <span class="nav-text">loading组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alert组件"><span class="nav-number">1.6.</span> <span class="nav-text">Alert组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Toast组件（用于输入校验的错误提醒）"><span class="nav-number">1.7.</span> <span class="nav-text">Toast组件（用于输入校验的错误提醒）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Grid布局"><span class="nav-number">1.8.</span> <span class="nav-text">Grid布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modal组件"><span class="nav-number">1.9.</span> <span class="nav-text">Modal组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Toolbar组件"><span class="nav-number">1.10.</span> <span class="nav-text">Toolbar组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#card组件"><span class="nav-number">1.11.</span> <span class="nav-text">card组件</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yanzx</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yanzhengxing"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <a href="https://github.com/yanzxx"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+</body>
+</html>
