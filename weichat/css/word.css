@@ -1,0 +1,62 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-size: .12em 100%;
+  font: 20em/1 Arial;
+}
+
+.text--line {
+  font-size: .5em;
+}
+.text--line2 {
+  font-size: .3em;
+  color: #fff;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 5vh;
+  width: 80%;
+  height: 30%;
+
+}
+
+.text-copy {
+  fill: rgba(0, 0, 0, 0.03);
+  stroke: darkblue;
+  stroke-dasharray: 27% 58%;
+  stroke-width: 3px;
+  font-family: times;
+  font-style: italic;
+  animation: stroke-offset 10s linear;
+}
+.text-copy:nth-child(1) {
+  stroke: #dfb374;
+  stroke-dashoffset: 20%;
+}
+.text-copy:nth-child(2) {
+  stroke: #dfb374;
+  stroke-dashoffset: 40%;
+}
+.text-copy:nth-child(3) {
+  stroke: #dfb374;
+  stroke-dashoffset: 60%;
+}
+.text-copy:nth-child(4) {
+  stroke: #dfb374;
+  stroke-dashoffset: 80%;
+}
+.text-copy:nth-child(5) {
+  stroke:#dfb374;
+  stroke-dashoffset: 100%;
+}
+
+@keyframes stroke-offset {
+  50% {
+    stroke-dashoffset: 100%;
+    stroke-dasharray: 100%;
+  }
+}
